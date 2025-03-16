@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #myapps
-    'visits'
+    'visits',
+    'commando',
 ]
 
 MIDDLEWARE = [
@@ -93,11 +94,8 @@ DATABASES = {
     }
 }
 
-DATABASE_URL = config("DATABASE_URL", cast=str)
-
-
 CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=30)
-DATABASE_URL = config("DATABASE_URL", cast=str)
+DATABASE_URL = config("DATABASE_URL", default=None)
 
 if DATABASE_URL is not None:
     import dj_database_url
@@ -145,6 +143,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_BASE_DIR = BASE_DIR / "staticfiles"
+STATICFILES_BASE_DIR.mkdir(exits_ok=True, parents=True)
 STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR/"vendors"
 
 #source(s) for python manage.py collectstatic
