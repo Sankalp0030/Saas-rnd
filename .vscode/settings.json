@@ -1,0 +1,5 @@
+{
+    "editor.maxTokenizationLineLength": 200000000,
+    "editor.stopRenderingLineAfter": 200000000,
+    "editor.experimental.asyncTokenization": true,
+}
