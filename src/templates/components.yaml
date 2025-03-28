@@ -1,0 +1,4 @@
+components:
+  base:
+    template: "base.html"
+    description: "The base template for the website, used as a layout for other pages."
